@@ -6,3 +6,14 @@
 <p><%= picture[:title] %>,<%= picture[:artist] %></p>
 <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
 <% end %>
+
+<h1>Most recent Pictures</h1>
+
+<u1>
+	<% @most_recent_pictures.each do |picture| %>
+	<li><%= picture.title %></li>
+	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+	<% end %>
+</u1>
+
+<h1>All pictures more than one month old</h1>

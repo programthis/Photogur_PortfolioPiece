@@ -19,7 +19,6 @@
 <h1>All pictures more than one month old</h1>
 
 <u1>
-	<%= time=Time.new %>
 	<% @created_before.each do |picture| %>
 	<li><%= picture.title %></li>
 	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>

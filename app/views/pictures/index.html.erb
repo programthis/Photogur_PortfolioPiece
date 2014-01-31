@@ -17,3 +17,15 @@
 </u1>
 
 <h1>All pictures more than one month old</h1>
+
+<u1>
+	<%= time=Time.new %>
+	<% @created_before.each do |picture| %>
+	<li><%= picture.title %></li>
+	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+	<% end %>
+</u1>
+
+<h1>Total number of pictures</h1>
+
+<%= Picture.created_before(1.month.ago).count %>

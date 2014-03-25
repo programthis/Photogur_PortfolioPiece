@@ -15,13 +15,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "Edit", edit_picture_path(@picture) %></li>
-        <li><%= link_to "Delete", @picture, :confirm => "Are you sure you wish to delete this picture?", :method => :delete %></li>
+        <li><a href="#" id="nodelete" data-toggle="popover" data-placement="bottom" data-content="You can't delete this. lol">Delete</a></li>
       </ul>
-
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#nodelete").popover();
+    });
+</script>
 
 <h3><%= @picture[:title] %> by <%= @picture[:artist] %></h3>
 <%= image_tag @picture.url %>

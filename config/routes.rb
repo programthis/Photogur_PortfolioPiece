@@ -1,5 +1,7 @@
 Photogur2::Application.routes.draw do
 
+get "pictures_most_recent" => "pictures#most_recent"
+get "pictures_onemonth" => "pictures#onemonth"
 resources :pictures
   root :to => "pictures#index"
 

@@ -27,5 +27,9 @@
     });
 </script>
 
-<h3><%= @picture[:title] %> by <%= @picture[:artist] %></h3>
-<%= image_tag @picture.url %>
+<div class="picture_title">
+  <h3><%= @picture[:title] %> by <%= @picture[:artist] %></h3>
+</div>
+<div class="picture_detail">
+  <%= image_tag @picture.url %>
+</div>
